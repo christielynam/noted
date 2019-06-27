@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.development.js",
     "build": "rimraf dist && NODE_ENV=production webpack --config ./config/webpack.config.production.js",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "yarn run build && aws s3 cp dist/ s3://superimportant.com/ --recursive"
   },
   "author": "Steve Kinney <hello@stevekinney.net> (http://stevekinney.net)",
   "license": "MIT",
@@ -16,7 +17,7 @@
     "history": "^4.7.2",
     "jest": "^23.5.0",
     "lodash": "^4.17.5",
-    "marked": "^0.3.17",
+    "marked": "^0.6.2",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
